@@ -1,10 +1,10 @@
-@extends('dashboard.layout')
 
-@section('konten')
-<div class="pb-3"><a href="{{route('education.index')}}" class="btn btn-secondary"><< Back</a></div>
-<form action="{{route('education.update', $data->id)}}" method="POST">
-    @csrf
-    @method('put')
+
+<?php $__env->startSection('konten'); ?>
+<div class="pb-3"><a href="<?php echo e(route('education.index')); ?>" class="btn btn-secondary"><< Back</a></div>
+<form action="<?php echo e(route('education.update', $data->id)); ?>" method="POST">
+    <?php echo csrf_field(); ?>
+    <?php echo method_field('put'); ?>
     <div class="mb-3">
         <label for="tittle" class="form-label">University Name</label>
         <input
@@ -14,7 +14,7 @@
             id="tittle"
             aria-describedby="helpId"
             placeholder="University Name"
-            value="{{$data->judul}}"
+            value="<?php echo e($data->judul); ?>"
         />
     </div>
     <div class="mb-4">
@@ -26,7 +26,7 @@
             id="info1"
             aria-describedby="helpId"
             placeholder="Faculty Name"
-            value="{{$data->info1}}"
+            value="<?php echo e($data->info1); ?>"
         />
     </div>
     <div class="mb-4">
@@ -38,20 +38,7 @@
             id="info2"
             aria-describedby="helpId"
             placeholder="Study Program"
-            value="{{$data->info2}}"
-        />
-    </div>
-    <div class="mb-4">
-        <label for="tittle" class="form-label"></label>
-        <input
-            type="number"
-            class="form-control"
-            name="info3"
-            id="info3"
-            aria-describedby="helpId"
-            placeholder="GPA"
-            step="0.01"
-            value="{{$data->info3}}"
+            value="<?php echo e($data->info2); ?>"
         />
     </div>
     <div class="mb-4">
@@ -62,7 +49,7 @@
                 class="form-control form-control-sm"
                 name="tgl_mulai"
                 placeholder="dd/mm/yyyy"
-                value="{{$data->tgl_mulai}}">
+                value="<?php echo e($data->tgl_mulai); ?>">
             </div>
             <div class="col-auto">Date End</div>
             <div class="col-auto">
@@ -70,7 +57,7 @@
                 class="form-control form-control-sm"
                 name="tgl_akhir"
                 placeholder="dd/mm/yyyy"
-                value="{{$data->tgl_akhir}}">
+                value="<?php echo e($data->tgl_akhir); ?>">
             </div>
         </div>
     </div>
@@ -78,4 +65,5 @@
     
 </form>
     
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('dashboard.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\utsporto\resources\views/dashboard/education/edit.blade.php ENDPATH**/ ?>

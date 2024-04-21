@@ -11,7 +11,6 @@
                     <th>University Name</th>
                     <th>Faculty Name</th>
                     <th>Program Study</th>
-                    <th>GPA</th>
                     <th>Start Date</th>
                     <th>End Date</th>
                     <th class="col-2">Action</th>

@@ -1,9 +1,9 @@
-@extends('dashboard.layout')
 
-@section('konten')
-    <div class="pb-3"><a href="{{route('education.index')}}" class="btn btn-secondary"><< Back</a></div>
-    <form action="{{route('education.store')}}" method="POST">
-        @csrf
+
+<?php $__env->startSection('konten'); ?>
+    <div class="pb-3"><a href="<?php echo e(route('education.index')); ?>" class="btn btn-secondary"><< Back</a></div>
+    <form action="<?php echo e(route('education.store')); ?>" method="POST">
+        <?php echo csrf_field(); ?>
         <div class="mb-3">
             <label for="tittle" class="form-label">University Name</label>
             <input
@@ -13,7 +13,7 @@
                 id="tittle"
                 aria-describedby="helpId"
                 placeholder="University Name"
-                value="{{Session::get('judul')}}"
+                value="<?php echo e(Session::get('judul')); ?>"
             />
         </div>
         <div class="mb-4">
@@ -25,7 +25,7 @@
                 id="info1"
                 aria-describedby="helpId"
                 placeholder="Faculty Name"
-                value="{{Session::get('info1')}}"
+                value="<?php echo e(Session::get('info1')); ?>"
             />
         </div>
         <div class="mb-4">
@@ -37,7 +37,7 @@
                 id="info2"
                 aria-describedby="helpId"
                 placeholder="Study Program"
-                value="{{Session::get('info2')}}"
+                value="<?php echo e(Session::get('info2')); ?>"
             />
         </div>
      
@@ -49,7 +49,7 @@
                     class="form-control form-control-sm"
                     name="tgl_mulai"
                     placeholder="dd/mm/yyyy"
-                    value="{{Session::get('tgl_mulai')}}">
+                    value="<?php echo e(Session::get('tgl_mulai')); ?>">
                 </div>
                 <div class="col-auto">Date End</div>
                 <div class="col-auto">
@@ -57,7 +57,7 @@
                     class="form-control form-control-sm"
                     name="tgl_akhir"
                     placeholder="dd/mm/yyyy"
-                    value="{{Session::get('tgl_akhir')}}">
+                    value="<?php echo e(Session::get('tgl_akhir')); ?>">
                 </div>
             </div>
         </div>
@@ -65,4 +65,5 @@
         
     </form>
     
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('dashboard.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\utsporto\resources\views/dashboard/education/create.blade.php ENDPATH**/ ?>
